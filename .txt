@@ -1,0 +1,23 @@
+```bat id="4mvj5m"
+@echo off
+echo ===============================
+echo INSTALANDO ZABBIX AGENT
+echo ===============================
+
+msiexec /i "A:\matheus\zabbix\zabbix_agent.msi" /quiet ^
+SERVER=129.121.39.38 ^
+SERVERACTIVE=129.121.39.38 ^
+HOSTNAME=%COMPUTERNAME%
+
+timeout /t 5
+
+net stop "Zabbix Agent"
+net start "Zabbix Agent"
+
+echo.
+echo ===============================
+echo ZABBIX INSTALADO COM SUCESSO
+echo ===============================
+
+pause
+```
